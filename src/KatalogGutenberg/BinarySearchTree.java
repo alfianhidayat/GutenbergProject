@@ -38,30 +38,6 @@ public class BinarySearchTree {
         }
     }
 
-    public void baca() {
-        inorder(rootNumber);
-    }
-
-    public void inorder(Node tmp) {
-        if (tmp != null) {
-            inorder(tmp.kiri);
-            inorder(tmp.kanan);
-            System.out.println("");
-            System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-            System.out.println("Pengarang : " + tmp.author);
-            System.out.println("Judul : " + tmp.title);
-            System.out.println("Id Buku : " + tmp.no);
-            System.out.println("Properti :");
-            if (tmp.prop.equals("")) {
-                System.out.println("Tidak Ada");
-            } else {
-                System.out.println(tmp.prop);
-            }
-            System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-            System.out.println("");
-        }
-    }
-
     public boolean isEmptyNumber() {
         return (rootNumber == null);
     }
@@ -84,7 +60,7 @@ public class BinarySearchTree {
         return node;
     }
 
-    public String displayLink(Node tmp) {      // display ourself
+    public String displayNode(Node tmp) {      // display ourself
         if (tmp != null) {
             String kata = "Author  : " + tmp.author + "--";
             kata += "Title      : " + tmp.title + "--";
