@@ -332,7 +332,7 @@ public class SearchCatalog extends javax.swing.JFrame {
             if (as.get(i).author.equalsIgnoreCase(cari) && select.equalsIgnoreCase("author")) {
                 tmp = bst.searchNumber(as.get(i).no);
                 isFound = true;
-                String[] arr = bst.displayLink(tmp).split("--");
+                String[] arr = bst.displayNode(tmp).split("--");
                 for (int j = 0; j < arr.length; j++) {
                     if (arr[j] != null) {
                         Output.add(arr[j]);
@@ -343,7 +343,7 @@ public class SearchCatalog extends javax.swing.JFrame {
             if (as.get(i).title.equalsIgnoreCase(cari) && select.equalsIgnoreCase("title")) {
                 tmp = bst.searchNumber(as.get(i).no);
                 isFound = true;
-                String[] arr = bst.displayLink(tmp).split("--");
+                String[] arr = bst.displayNode(tmp).split("--");
                 for (int j = 0; j < arr.length; j++) {
                     if (arr[j] != null) {
                         Output.add(arr[j]);
