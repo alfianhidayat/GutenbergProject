@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package KatalogGutenberg;
 
 /**
@@ -55,17 +60,16 @@ public class BinarySearchTree {
         return node;
     }
 
-    public String displayNode(Node tmp) {      // display ourself
+    public String displayNode(Node tmp) {
         if (tmp != null) {
             String kata = "Author  : " + tmp.author + "--";
             kata += "Title      : " + tmp.title + "--";
-            kata += "No        : " + tmp.no +"--";
+            kata += "No        : " + tmp.no + "--";
             if (!tmp.prop.equals("")) {
-                kata += "Properties : "+tmp.prop;
+                kata += "Properties : " + tmp.prop;
             }
             return kata;
         }
         return "";
     }
 }
-

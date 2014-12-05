@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package KatalogGutenberg;
 
 import java.io.BufferedReader;
@@ -50,7 +55,7 @@ public class SearchCatalog extends javax.swing.JFrame {
                     if (mulai) {
                         if (line.length() != 0) {
                             String[] arr1;
-                            if (line.contains(".xxx]")  ) {
+                            if (line.contains(".xxx]")) {
                                 arr1 = line.split("\\[.*\\]");
                                 if (arr1.length > 1) {
                                     if (arr1[1] != null) {
@@ -65,7 +70,7 @@ public class SearchCatalog extends javax.swing.JFrame {
                                     }
                                 }
                             }
-                            
+
                             kata = kata + arr1[0];
                         } else {
                             if (kata.length() != 0) {
@@ -131,7 +136,7 @@ public class SearchCatalog extends javax.swing.JFrame {
         image = new javax.swing.JLabel();
         radioAuthor = new javax.swing.JRadioButton();
         radioTitle = new javax.swing.JRadioButton();
-        jLabel1 = new javax.swing.JLabel();
+        Created = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -145,6 +150,7 @@ public class SearchCatalog extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setName("Frame"); // NOI18N
 
         searchButton.setText("Search");
         searchButton.addActionListener(new java.awt.event.ActionListener() {
@@ -194,7 +200,7 @@ public class SearchCatalog extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("by 1106130020");
+        Created.setText("by Group 8");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -204,26 +210,27 @@ public class SearchCatalog extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(Output, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(Created)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Exit))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(radioAuthor)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(radioTitle)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(InputText, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(InputText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 7, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(175, 175, 175)
                 .addComponent(image)
-                .addGap(139, 139, 139))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -246,7 +253,7 @@ public class SearchCatalog extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(Exit)
-                    .addComponent(jLabel1))
+                    .addComponent(Created))
                 .addContainerGap())
         );
 
@@ -259,6 +266,8 @@ public class SearchCatalog extends javax.swing.JFrame {
         if (answer == JOptionPane.YES_OPTION) {
             System.exit(0);
         }
+
+
     }//GEN-LAST:event_ExitActionPerformed
 
     private void InputTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InputTextActionPerformed
@@ -315,7 +324,7 @@ public class SearchCatalog extends javax.swing.JFrame {
         Node tmp;
         Boolean isFound = false;
         for (int i = 0; i < as.size(); i++) {
-            if (as.get(i).author.equalsIgnoreCase(cari) && select.equalsIgnoreCase("author")) {
+            if (as.get(i).author.toLowerCase().contains(cari.toLowerCase()) && select.equalsIgnoreCase("author")) {
                 tmp = bst.searchNumber(as.get(i).no);
                 isFound = true;
                 String[] arr = bst.displayNode(tmp).split("--");
@@ -326,7 +335,7 @@ public class SearchCatalog extends javax.swing.JFrame {
                 }
                 Output.add("");
             }
-            if (as.get(i).title.equalsIgnoreCase(cari) && select.equalsIgnoreCase("title")) {
+            if (as.get(i).title.toLowerCase().contains(cari.toLowerCase()) && select.equalsIgnoreCase("title")) {
                 tmp = bst.searchNumber(as.get(i).no);
                 isFound = true;
                 String[] arr = bst.displayNode(tmp).split("--");
@@ -358,16 +367,15 @@ public class SearchCatalog extends javax.swing.JFrame {
 
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Created;
     private javax.swing.JButton Exit;
     private java.awt.TextField InputText;
     private java.awt.List Output;
     private javax.swing.JLabel image;
     private javax.swing.JFrame jFrame1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JRadioButton radioAuthor;
     private javax.swing.JRadioButton radioTitle;
     private javax.swing.JButton searchButton;
     // End of variables declaration//GEN-END:variables
 }
-
