@@ -1,3 +1,13 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/*
+ * SearchCatalog.java
+ *
+ * Created on 18 Des 13, 4:57:02
+ */
 package KatalogGutenberg;
 
 import java.io.BufferedReader;
@@ -11,7 +21,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Alfian Hidayat
+ * @author Anonymous
  */
 public class SearchCatalog extends javax.swing.JFrame {
 
@@ -23,6 +33,9 @@ public class SearchCatalog extends javax.swing.JFrame {
     ArrayList<Node> as = new ArrayList<Node>();
     ButtonGroup bg = new ButtonGroup();
 
+    /**
+     * Creates new form SearchCatalog
+     */
     public SearchCatalog() {
         Random r = new Random();
         ArrayList<Node> at = new ArrayList<Node>();
@@ -58,6 +71,7 @@ public class SearchCatalog extends javax.swing.JFrame {
                                     }
                                 }
                             } else {
+                                // split the line on your splitter(s)
                                 arr1 = line.split("[ ]{3,}");
                                 if (arr1.length > 1) {
                                     if (arr1[1] != null) {
