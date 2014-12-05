@@ -370,3 +370,4 @@ public class SearchCatalog extends javax.swing.JFrame {
     private javax.swing.JButton searchButton;
     // End of variables declaration//GEN-END:variables
 }
+
