@@ -1,7 +1,4 @@
 GutenbergProject
 =================
-<<<<<<< HEAD
+Download aplikasi .jar dilink http://goo.gl/LBrCRM
 
-application to search for data in the catalog gutenberg
-========
->>>>>>> origin/master
