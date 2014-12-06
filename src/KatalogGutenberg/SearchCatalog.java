@@ -36,7 +36,7 @@ public class SearchCatalog extends javax.swing.JFrame {
         Exit = new javax.swing.JButton();
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        String file = ("GUTINDEX.ALL");
+        String file = ("C:\\Users\\Alfian Hidayat\\Documents\\NetBeansProjects\\Katalog Gutenberg Project\\GUTINDEX.ALL");
         try {
             if (file != null) {
                 BufferedReader br = new BufferedReader(new FileReader(new File(file)));
