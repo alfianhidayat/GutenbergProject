@@ -1,4 +1,4 @@
 GutenbergProject
 =================
-Download aplikasi .jar dilink http://goo.gl/LBrCRM
+Download aplikasi .jar di link http://goo.gl/LBrCRM
 
